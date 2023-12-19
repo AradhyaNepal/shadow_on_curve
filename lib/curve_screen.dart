@@ -21,7 +21,7 @@ class CurveScreen extends StatelessWidget {
                     child: CustomPaint(
                       painter: CurveCustomPainter(
                         curveStartHeight: 40,
-                        shadowHeight: 2,
+                        shadowHeight: 0.5,
                         curveColor: color,
                         shadowColor: Colors.grey.withOpacity(0.5),
                         blurRadius: 3,

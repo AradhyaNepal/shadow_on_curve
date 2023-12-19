@@ -41,12 +41,13 @@ class CurveCustomPainter extends CustomPainter {
     Size size,
     Canvas canvas,
   ) {
-    final start=_startingOfTheCurve(size);
+    final curveStart=_startingOfTheCurve(size);
     final shadowPath = Path();
-    shadowPath.moveTo(0, start-shadowHeight);
-    shadowPath.quadraticBezierTo(size.width / 2, size.height, size.width, start-shadowHeight);
-    shadowPath.lineTo(size.width, start+shadowHeight);
-    shadowPath.quadraticBezierTo(size.width / 2, size.height+shadowHeight, 0, start+shadowHeight);
+    var shadowStart = curveStart-shadowHeight*2-blurRadius*2;
+    shadowPath.moveTo(0, shadowStart);
+    shadowPath.quadraticBezierTo(size.width / 2, size.height, size.width, shadowStart);
+    shadowPath.lineTo(size.width, curveStart+shadowHeight);
+    shadowPath.quadraticBezierTo(size.width / 2, size.height+shadowHeight, 0, curveStart+shadowHeight);
 
 
     canvas.drawShadow(
