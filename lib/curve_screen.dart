@@ -21,9 +21,10 @@ class CurveScreen extends StatelessWidget {
                     child: CustomPaint(
                       painter: CurveCustomPainter(
                         curveStartHeight: 40,
-                        shadowHeight: 5,
+                        shadowHeight: 2,
                         curveColor: color,
-                        shadowColor: Colors.black.withOpacity(0.3),
+                        shadowColor: Colors.grey.withOpacity(0.5),
+                        blurRadius: 3,
                       ),
                       child: const SizedBox.expand(),
                     ),
@@ -35,9 +36,8 @@ class CurveScreen extends StatelessWidget {
                         height: 100,
                         width: 100,
                         decoration: const BoxDecoration(
-                        color: Colors.red,
+                          color: Colors.red,
                           shape: BoxShape.circle,
-
                         ),
                       ),
                     ),
